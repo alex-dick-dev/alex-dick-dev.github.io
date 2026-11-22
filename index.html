@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexander Dick | Principal Software Architect · .NET & System Architecture</title>
+  <meta name="description" content="Dipl. Informatiker (FH) Alexander Dick – Principal Software Architect für .NET Backend, Systemarchitektur, gRPC und industrielle Softwarelösungen in Augsburg & remote." />
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #1d4ed8;
+      --accent-hover: #1e40af;
+      --border: #e2e8f0;
+      --badge-bg: #eff6ff;
+      --badge-text: #1e40af;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1120;
+        --surface: #111827;
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --accent: #3b82f6;
+        --accent-hover: #60a5fa;
+        --border: #1e293b;
+        --badge-bg: #1e293b;
+        --badge-text: #93c5fd;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
+    .brand span { color: var(--accent); }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    nav a:hover { color: var(--accent); }
+    .hero { padding: 72px 0 56px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(2rem, 4vw, 2.85rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
+    }
+    .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+    .cta-group { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .btn-primary { background: var(--accent); color: #ffffff; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--accent); }
+    section { padding: 48px 0; border-top: 1px solid var(--border); }
+    h2 {
+      font-size: 1.45rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .card h3 { font-size: 1.08rem; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .tag {
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .contact-box p { color: var(--muted); margin-bottom: 16px; }
+    footer {
+      padding: 40px 0 56px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    footer h3 {
+      color: var(--text);
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">Alexander Dick <span>// Dev</span></div>
+      <nav>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#stack">Technologie</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#impressum">Impressum</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <span class="eyebrow">Dipl. Informatiker (FH) · Augsburg &amp; Remote</span>
+        <h1>Principal Software Architect für .NET Backend &amp; Systemarchitektur</h1>
+        <p class="lead">
+          Über 20 Jahre Erfahrung in der Konzeption, Architektur und Entwicklung robuster,
+          geschäftskritischer Softwaresysteme – von hardwarenaher industrieller Automatisierung
+          bis zu skalierbaren modernen .NET-Backends.
+        </p>
+        <div class="cta-group">
+          <a class="btn btn-primary" href="mailto:alexander.dick.dev@googlemail.com?subject=Projektanfrage">Projekt anfragen</a>
+          <a class="btn btn-secondary" href="https://de.linkedin.com/in/alexander-dick-0b2952402" target="_blank" rel="noopener">LinkedIn-Profil</a>
+        </div>
+      </div>
+
+      <section id="leistungen">
+        <h2>Schwerpunkte &amp; Beratung</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Modernes .NET Backend</h3>
+            <p>Konzeption und Umsetzung wartbarer, hochperformanter Services auf Basis von ASP.NET Core und .NET 6/8+.</p>
+          </div>
+          <div class="card">
+            <h3>Systemarchitektur &amp; Integration</h3>
+            <p>Plattformübergreifende Kommunikation über gRPC und REST-APIs sowie saubere Anbindung bestehender Systemkomponenten.</p>
+          </div>
+          <div class="card">
+            <h3>Industrial &amp; Mission-Critical Systems</h3>
+            <p>Langjährige Praxis an der Schnittstelle zwischen Backend-Infrastruktur und hardwarenahen Steuerungssystemen.</p>
+          </div>
+          <div class="card">
+            <h3>Modernisierung &amp; Engineering-Workflows</h3>
+            <p>Refactoring gewachsener Codebasen, Build-/CI-CD-Pipelines sowie Einsatz moderner AI-gestützter Entwicklungsprozesse.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="stack">
+        <h2>Technologischer Fokus</h2>
+        <div class="tags">
+          <span class="tag">C# / .NET 6 / 8+</span>
+          <span class="tag">ASP.NET Core</span>
+          <span class="tag">.NET Framework</span>
+          <span class="tag">gRPC &amp; Protobuf</span>
+          <span class="tag">System- &amp; Softwarearchitektur</span>
+          <span class="tag">C / C++ Interop</span>
+          <span class="tag">SQL &amp; Datenbankdesign</span>
+          <span class="tag">CI/CD &amp; Azure Pipelines</span>
+          <span class="tag">AI-Driven Engineering</span>
+        </div>
+      </section>
+
+      <section id="kontakt">
+        <h2>Kontakt</h2>
+        <div class="contact-box">
+          <p>
+            Sie planen ein Architektur-Review, die Modernisierung einer bestehenden .NET-Plattform
+            oder benötigen erfahrene Unterstützung im Backend-Engineering? Schreiben Sie mir gerne direkt:
+          </p>
+          <p>
+            <strong>E-Mail:</strong>
+            <a href="mailto:alexander.dick.dev@googlemail.com">alexander.dick.dev@googlemail.com</a>
+          </p>
+          <a class="btn btn-primary" href="https://sites.google.com/view/alexander-dick-dev" target="_blank" rel="noopener">Zum Kontaktformular</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="impressum">
+      <h3>Impressum (Angaben gemäß § 5 DDG)</h3>
+      <p>
+        Alexander Dick – Softwareentwicklung &amp; IT-Beratung (Freiberufliche Tätigkeit)<br />
+        Philipp-Scheidemann-Straße 8, 86199 Augsburg, Deutschland<br />
+        E-Mail: <a href="mailto:alexander.dick.dev@googlemail.com">alexander.dick.dev@googlemail.com</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
