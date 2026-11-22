@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alexander Dick | Principal Software Architect · .NET & System Architecture</title>
-  <meta name="description" content="Dipl. Informatiker (FH) Alexander Dick – Principal Software Architect für .NET Backend, Systemarchitektur, gRPC und industrielle Softwarelösungen in Augsburg & remote." />
+  <title>Alexander Dick | Principal Software Architect · .NET 10 &amp; System Architecture</title>
+  <meta name="description" content="Dipl. Informatiker (FH) Alexander Dick – Principal Software Architect für .NET 10 Backend, Systemarchitektur, gRPC/REST-APIs und Modernisierung von .NET-Anwendungen in Augsburg &amp; remote." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -13,10 +13,7 @@
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
       --transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
 
-    /* MODERN DARK ENGINEERING (DEFAULT) */
-    [data-theme="dark"] {
       --bg: #070b14;
       --bg-elevated: #0d1322;
       --surface: rgba(15, 23, 42, 0.72);
@@ -41,32 +38,6 @@
       --shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.65);
     }
 
-    /* OPTIONAL LIGHT THEME TOGGLE */
-    [data-theme="light"] {
-      --bg: #ffffff;
-      --bg-elevated: #f8fafc;
-      --surface: #ffffff;
-      --surface-solid: #ffffff;
-      --surface-hover: #f1f5f9;
-      --border: #e2e8f0;
-      --border-strong: #0f172a;
-      --text: #0f172a;
-      --text-secondary: #475569;
-      --text-muted: #64748b;
-      --accent: #0f172a;
-      --accent-secondary: #1d4ed8;
-      --accent-glow: rgba(29, 78, 216, 0.06);
-      --btn-primary-bg: #0f172a;
-      --btn-primary-text: #ffffff;
-      --btn-primary-hover: #1e293b;
-      --badge-bg: #f1f5f9;
-      --badge-text: #1e293b;
-      --badge-border: #cbd5e1;
-      --grid-color: rgba(15, 23, 42, 0.035);
-      --code-bg: #f8fafc;
-      --shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
-    }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -79,19 +50,17 @@
         linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
         linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
       background-size: 44px 44px;
-      transition: background-color var(--transition), color var(--transition);
     }
 
     .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-    /* NAVIGATION */
     header {
       position: sticky;
       top: 0;
       z-index: 50;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      background: rgba(7, 11, 20, 0.82);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
@@ -137,30 +106,12 @@
       transition: color var(--transition);
     }
     .nav-links a:hover { color: var(--text); }
-    .theme-btn {
-      background: var(--surface-solid);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-      font-size: 0.95rem;
-      transition: all var(--transition);
-    }
-    .theme-btn:hover {
-      border-color: var(--border-strong);
-      color: var(--text);
-    }
 
-    /* HERO */
     .hero {
       padding: 84px 0 72px;
       position: relative;
     }
-    [data-theme="dark"] .hero::before {
+    .hero::before {
       content: "";
       position: absolute;
       top: -40px;
@@ -272,7 +223,6 @@
       margin-top: 2px;
     }
 
-    /* ARCHITECTURE TERMINAL CARD */
     .arch-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -369,7 +319,6 @@
     .tp { color: var(--accent-secondary); }
     .cm { color: var(--text-muted); font-style: italic; }
 
-    /* SECTIONS */
     section { padding: 72px 0; border-top: 1px solid var(--border); }
     .section-eyebrow {
       font-family: var(--font-mono);
@@ -393,7 +342,6 @@
       font-size: 1rem;
     }
 
-    /* CARDS */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -432,7 +380,6 @@
       color: var(--text-secondary);
     }
 
-    /* SCENARIOS */
     .scenario-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -463,7 +410,6 @@
       color: var(--text-secondary);
     }
 
-    /* STACK MATRIX */
     .stack-groups {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -488,7 +434,6 @@
       font-weight: 500;
     }
 
-    /* CONTACT */
     .contact-panel {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -540,7 +485,6 @@
     }
     .contact-value:hover { color: var(--accent); }
 
-    /* FOOTER / IMPRESSUM */
     footer {
       border-top: 1px solid var(--border);
       padding: 48px 0 64px;
@@ -582,7 +526,6 @@
         <a href="#stack">Tech-Stack</a>
         <a href="#kontakt">Kontakt</a>
         <a href="#impressum">Impressum</a>
-        <button class="theme-btn" id="themeToggle" title="Farbschema wechseln" aria-label="Farbschema wechseln">☀️</button>
       </nav>
     </div>
   </header>
@@ -596,16 +539,16 @@
             <span>Dipl. Informatiker (FH) · Augsburg &amp; Remote</span>
           </div>
           <h1>
-            Principal Software Architect für <span class="gradient-text">.NET Backend &amp; Systemarchitektur</span>
+            Principal Software Architect für <span class="gradient-text">.NET 10 Backend &amp; Systemarchitektur</span>
           </h1>
           <p class="hero-lead">
-            Über 20 Jahre Erfahrung im Entwurf und der Entwicklung hochperformanter,
-            geschäftskritischer Softwaresysteme – von hardwarenaher industrieller Automatisierung
-            bis zu modernen, skalierbaren .NET-Backends.
+            Über 20 Jahre Erfahrung im Entwurf und der Entwicklung moderner, wartbarer
+            .NET-Backends, klarer Systemarchitekturen und leistungsfähiger Schnittstellen
+            für geschäftskritische Anwendungen.
           </p>
           <div class="cta-row">
             <a href="#kontakt" class="btn btn-primary">Projekt unverbindlich anfragen</a>
-            <a href="https://de.linkedin.com/in/alexander-dick-0b2952402" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn-Profil ↗</a>
+            <a href="https://github.com/alex-dick-dev" target="_blank" rel="noopener" class="btn btn-secondary">GitHub-Profil ↗</a>
           </div>
           <div class="metrics-bar">
             <div>
@@ -613,12 +556,12 @@
               <div class="metric-label">Software Engineering</div>
             </div>
             <div>
-              <div class="metric-val">.NET 6/8+</div>
-              <div class="metric-label">gRPC &amp; Backend Core</div>
+              <div class="metric-val">.NET 10</div>
+              <div class="metric-label">C# 14 &amp; ASP.NET Core</div>
             </div>
             <div>
-              <div class="metric-val">24/7</div>
-              <div class="metric-label">Mission-Critical Systems</div>
+              <div class="metric-val">Enterprise</div>
+              <div class="metric-label">Architektur &amp; APIs</div>
             </div>
           </div>
         </div>
@@ -628,52 +571,50 @@
             <div class="window-dots"><span></span><span></span><span></span></div>
             <div class="arch-tabs">
               <button class="arch-tab active" onclick="switchTab('topo', this)">System-Topologie</button>
-              <button class="arch-tab" onclick="switchTab('code', this)">gRPC / .NET 8</button>
+              <button class="arch-tab" onclick="switchTab('code', this)">gRPC / .NET 10</button>
             </div>
           </div>
           <div class="arch-body">
             <div id="topoView" class="topology-flow">
               <div class="node">
                 <div>
-                  <div class="node-title">Client / HMI / Enterprise Apps</div>
-                  <div class="node-sub">Cross-Platform UI &amp; External Consumers</div>
+                  <div class="node-title">Web Clients · Desktop · Partner-APIs</div>
+                  <div class="node-sub">Cross-Platform Frontends &amp; External Consumers</div>
                 </div>
                 <span class="node-tag">REST / gRPC</span>
               </div>
-              <div class="connector">▼ Low-Latency Binary Contract (Protobuf)</div>
+              <div class="connector">▼ Typisierte Service-Contracts &amp; Async Pipelines</div>
               <div class="node" style="border-color: var(--border-strong);">
                 <div>
-                  <div class="node-title">.NET 8 Backend Core &amp; Domain Services</div>
-                  <div class="node-sub">Clean Architecture · Async Pipelines · Resilience</div>
+                  <div class="node-title">.NET 10 Backend Core &amp; Domain Services</div>
+                  <div class="node-sub">Clean Architecture · Modular Services · Resilience</div>
                 </div>
                 <span class="node-tag">ASP.NET Core</span>
               </div>
-              <div class="connector">▼ Deterministic Interop &amp; Data Persistence</div>
+              <div class="connector">▼ Transaktionale Persistenz &amp; System-Integration</div>
               <div class="node">
                 <div>
-                  <div class="node-title">Hardware-Near Layer &amp; Data Stores</div>
-                  <div class="node-sub">Industrial Control Systems · C/C++ · SQL</div>
+                  <div class="node-title">Datenbanken · Messaging · Bestandssysteme</div>
+                  <div class="node-sub">SQL · Event-Streams · Legacy-Adapter</div>
                 </div>
-                <span class="node-tag">Real-Time / IPC</span>
+                <span class="node-tag">Data &amp; Integration</span>
               </div>
             </div>
 
-            <pre id="codeView" class="code-view"><span class="cm">// High-Throughput gRPC Service Contract (.NET 8)</span>
-<span class="kw">public sealed class</span> <span class="tp">SystemTelemetryService</span>(
-    <span class="tp">IStateAggregator</span> aggregator,
-    <span class="tp">ILogger</span>&lt;<span class="tp">SystemTelemetryService</span>&gt; logger)
-    : <span class="tp">Telemetry</span>.<span class="tp">TelemetryBase</span>
+            <pre id="codeView" class="code-view"><span class="cm">// Typisierter gRPC Service Contract (.NET 10 / C# 14)</span>
+<span class="kw">public sealed class</span> <span class="tp">OrderIntegrationService</span>(
+    <span class="tp">IOrderDispatcher</span> dispatcher,
+    <span class="tp">ILogger</span>&lt;<span class="tp">OrderIntegrationService</span>&gt; logger)
+    : <span class="tp">Integration</span>.<span class="tp">IntegrationBase</span>
 {
-    <span class="kw">public override async</span> <span class="tp">Task</span> <span class="tp">StreamDiagnostics</span>(
-        <span class="tp">StreamRequest</span> request,
-        <span class="tp">IServerStreamWriter</span>&lt;<span class="tp">DiagnosticFrame</span>&gt; stream,
+    <span class="kw">public override async</span> <span class="tp">Task</span>&lt;<span class="tp">SyncResponse</span>&gt; <span class="tp">PublishBatch</span>(
+        <span class="tp">BatchRequest</span> request,
         <span class="tp">ServerCallContext</span> context)
     {
-        <span class="kw">await foreach</span> (<span class="kw">var</span> frame <span class="kw">in</span> aggregator
-            .ReadFramesAsync(request.NodeId, context.CancellationToken))
-        {
-            <span class="kw">await</span> stream.WriteAsync(frame);
-        }
+        <span class="kw">var</span> processed = <span class="kw">await</span> dispatcher
+            .DispatchAsync(request.Items, context.CancellationToken);
+
+        <span class="kw">return new</span> <span class="tp">SyncResponse</span> { ProcessedCount = processed };
     }
 }</pre>
           </div>
@@ -683,31 +624,31 @@
 
     <section id="leistungen">
       <div class="section-eyebrow">01 // Leistungsportfolio</div>
-      <h2>Architektur-Beratung &amp; Backend-Entwicklung</h2>
+      <h2>Architektur-Beratung &amp; .NET-Backend-Entwicklung</h2>
       <p class="section-desc">
         Pragmatische, wartbare Lösungen ohne Over-Engineering – von der strategischen
-        Architekturentscheidung bis zur produktionsreifen Implementierung.
+        Architekturentscheidung bis zur produktionsreifen Implementierung in .NET 10.
       </p>
       <div class="cards-grid">
         <div class="card">
-          <div class="card-icon">01 · BACKEND</div>
+          <div class="card-icon">01 · .NET 10 CORE</div>
           <h3>Modernes .NET Backend</h3>
-          <p>Konzeption und Realisierung skalierbarer, testbarer Services auf Basis von ASP.NET Core, C# und .NET 6/8+.</p>
+          <p>Konzeption und Realisierung skalierbarer, testbarer Services auf Basis von ASP.NET Core, C# 14 und .NET 10 LTS.</p>
         </div>
         <div class="card">
-          <div class="card-icon">02 · INTEROP</div>
-          <h3>Systemarchitektur &amp; gRPC</h3>
-          <p>Plattformübergreifende Kommunikation über gRPC/Protobuf und REST-APIs sowie saubere Integration verteilter Systemkomponenten.</p>
+          <div class="card-icon">02 · APIS &amp; INTEROP</div>
+          <h3>Systemarchitektur &amp; Integration</h3>
+          <p>Plattformübergreifende Kommunikation über gRPC/Protobuf und REST-APIs sowie saubere Anbindung verteilter Systemkomponenten.</p>
         </div>
         <div class="card">
-          <div class="card-icon">03 · INDUSTRIAL</div>
-          <h3>Hardwarenahe Systeme</h3>
-          <p>Langjährige Erfahrung an der Schnittstelle zwischen modernen .NET-Backends und anspruchsvollen industriellen Steuerungssystemen.</p>
+          <div class="card-icon">03 · MODERNIZATION</div>
+          <h3>Migration auf .NET 10</h3>
+          <p>Schrittweise Ablösung gewachsener .NET-Framework- und älterer .NET-Core-Anwendungen hin zu modularen, langfristig wartbaren Architekturen.</p>
         </div>
         <div class="card">
-          <div class="card-icon">04 · MODERNIZATION</div>
-          <h3>Migration &amp; AI-Workflows</h3>
-          <p>Schrittweise Ablösung gewachsener .NET-Framework-Monolithen, CI/CD-Optimierung sowie AI-gestützte Architektur-Validierung.</p>
+          <div class="card-icon">04 · ENGINEERING</div>
+          <h3>CI/CD &amp; AI-Driven Workflows</h3>
+          <p>Automatisierte Build-/Release-Pipelines, Architektur-Reviews sowie Integration moderner GenAI-Workflows für höhere Code-Qualität.</p>
         </div>
       </div>
     </section>
@@ -716,26 +657,26 @@
       <div class="section-eyebrow">02 // Architektur-Szenarien</div>
       <h2>Typische Einsatzfelder aus der Praxis</h2>
       <p class="section-desc">
-        Schwerpunkte aus über zwei Jahrzehnten Softwareentwicklung in Industrie,
-        Systemsoftware und unternehmenskritischen Anwendungen.
+        Schwerpunkte aus über zwei Jahrzehnten Softwareentwicklung für komplexe
+        Unternehmensanwendungen, Produktplattformen und Systemintegration.
       </p>
       <div class="scenario-list">
         <div class="scenario">
           <div class="scenario-meta">SZENARIO A · SYSTEM-INTEGRATION</div>
-          <h3>Plattformübergreifende gRPC-Backends für komplexe Systemlandschaften</h3>
-          <p>Entwurf stark typisierter, performanter Schnittstellen zwischen hardwarenahen Kernkomponenten, Bedienoberflächen und übergeordneten Diensten.</p>
+          <h3>Plattformübergreifende gRPC- &amp; REST-Backends</h3>
+          <p>Entwurf stark typisierter, performanter Schnittstellen zwischen modernen Web-/Desktop-Clients, zentralen Backend-Services und bestehenden Subsystemen.</p>
           <div class="mini-tags">
-            <span class="mini-tag">.NET 8</span>
+            <span class="mini-tag">.NET 10</span>
             <span class="mini-tag">gRPC / Protobuf</span>
-            <span class="mini-tag">Linux &amp; Windows</span>
+            <span class="mini-tag">REST / OpenAPI</span>
           </div>
         </div>
         <div class="scenario">
           <div class="scenario-meta">SZENARIO B · LEGACY TRANSFORMATION</div>
           <h3>Architektur-Reviews &amp; Migration gewachsener .NET-Codebasen</h3>
-          <p>Entkopplung eng gekoppelter Bestandssysteme, Einführung klarer Domänengrenzen und schrittweise Migration auf moderne LTS-Runtimes im laufenden Betrieb.</p>
+          <p>Entkopplung eng gekoppelter Bestandssysteme, Einführung klarer Domänengrenzen und schrittweise Migration auf .NET 10 LTS im laufenden Betrieb.</p>
           <div class="mini-tags">
-            <span class="mini-tag">.NET Framework → .NET 8</span>
+            <span class="mini-tag">.NET Framework → .NET 10</span>
             <span class="mini-tag">Clean Architecture</span>
             <span class="mini-tag">Refactoring</span>
           </div>
@@ -743,11 +684,11 @@
         <div class="scenario">
           <div class="scenario-meta">SZENARIO C · ENGINEERING QUALITY</div>
           <h3>Deterministische Build-, Test- &amp; Release-Pipelines</h3>
-          <p>Automatisierung komplexer Build-Ketten, Qualitäts-Gates und statischer Code-Analysen inklusive moderner GenAI-Workflows zur Beschleunigung von Reviews.</p>
+          <p>Aufbau zuverlässiger CI/CD-Strecken, automatisierter Qualitäts-Gates und moderner Entwicklungs-Workflows zur nachhaltigen Beschleunigung von Teams.</p>
           <div class="mini-tags">
             <span class="mini-tag">Azure Pipelines</span>
             <span class="mini-tag">CI/CD</span>
-            <span class="mini-tag">AI-Driven Engineering</span>
+            <span class="mini-tag">AI-Assisted Reviews</span>
           </div>
         </div>
       </div>
@@ -757,17 +698,16 @@
       <div class="section-eyebrow">03 // Technologie-Stack</div>
       <h2>Kernkompetenzen &amp; Werkzeuge</h2>
       <p class="section-desc">
-        Fokus auf bewährte, langfristig wartbare Technologien im Microsoft- und System-Ökosystem.
+        Fokus auf bewährte, langfristig wartbare Technologien im modernen .NET- und Cloud-Ökosystem.
       </p>
       <div class="stack-groups">
         <div class="stack-group">
           <h4>Core &amp; Runtimes</h4>
           <div class="pill-wrap">
-            <span class="pill">C# (aktuell)</span>
-            <span class="pill">.NET 6 / 8+</span>
+            <span class="pill">.NET 10 (LTS)</span>
+            <span class="pill">C# 14</span>
             <span class="pill">ASP.NET Core</span>
-            <span class="pill">.NET Framework</span>
-            <span class="pill">C / C++ Interop</span>
+            <span class="pill">.NET 8 / .NET Framework</span>
           </div>
         </div>
         <div class="stack-group">
@@ -776,7 +716,7 @@
             <span class="pill">Systemarchitektur</span>
             <span class="pill">gRPC &amp; Protobuf</span>
             <span class="pill">REST / OpenAPI</span>
-            <span class="pill">IPC &amp; Messaging</span>
+            <span class="pill">Messaging &amp; Events</span>
             <span class="pill">Distributed Systems</span>
           </div>
         </div>
@@ -800,11 +740,11 @@
           <h3>Gespräch oder Projektanfrage starten</h3>
           <p>
             Sie planen ein Architektur-Review, die Modernisierung einer bestehenden .NET-Anwendung
-            oder suchen einen erfahrenen Principal Architect für Ihr Backend-Team?
+            auf .NET 10 oder suchen einen erfahrenen Principal Architect für Ihr Backend-Team?
             Schreiben Sie mir gerne direkt per E-Mail oder über das Kontaktformular.
           </p>
           <div class="contact-actions">
-            <a href="mailto:alexander.dick.dev@googlemail.com?subject=Projektanfrage%20%E2%80%93%20Softwarearchitektur" class="btn btn-primary">Direkt per E-Mail schreiben</a>
+            <a href="mailto:alexander.dick.dev@googlemail.com?subject=Projektanfrage%20%E2%80%93%20.NET%20Architektur" class="btn btn-primary">Direkt per E-Mail schreiben</a>
             <button type="button" class="btn btn-secondary" id="copyMailBtn" onclick="copyEmail()">E-Mail-Adresse kopieren</button>
             <a href="https://sites.google.com/view/alexander-dick-dev" target="_blank" rel="noopener" class="btn btn-secondary">Kontaktformular öffnen ↗</a>
           </div>
@@ -820,8 +760,8 @@
             <span class="contact-value">Augsburg, Bayern · Remote (DACH)</span>
           </div>
           <div class="contact-item">
-            <span class="contact-label">Profil &amp; Netzwerk</span>
-            <a href="https://de.linkedin.com/in/alexander-dick-0b2952402" target="_blank" rel="noopener" class="contact-value">linkedin.com/in/alexander-dick-0b2952402 ↗</a>
+            <span class="contact-label">Code &amp; Profil</span>
+            <a href="https://github.com/alex-dick-dev" target="_blank" rel="noopener" class="contact-value">github.com/alex-dick-dev ↗</a>
           </div>
         </div>
       </div>
@@ -856,14 +796,6 @@
       document.getElementById('topoView').style.display = view === 'topo' ? 'flex' : 'none';
       document.getElementById('codeView').style.display = view === 'code' ? 'block' : 'none';
     }
-
-    const themeBtn = document.getElementById('themeToggle');
-    themeBtn.addEventListener('click', () => {
-      const html = document.documentElement;
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      themeBtn.textContent = isDark ? '🌙' : '☀️';
-    });
 
     function copyEmail() {
       navigator.clipboard.writeText('alexander.dick.dev@googlemail.com').then(() => {
