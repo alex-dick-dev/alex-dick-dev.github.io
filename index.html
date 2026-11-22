@@ -4,690 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alexander Dick | Principal Software Developer · .NET 10 &amp; AI-Driven Engineering</title>
-    <meta name="description" content="Dipl. Informatiker (FH) Alexander Dick – Principal Software Developer für .NET 10 Backend, moderne APIs und End-to-End AI-Driven Software Engineering (Multi-Agent Workflows, MCP, Azure DevOps) in Augsburg &amp; remote." />
+    <meta id="metaDesc" name="description" content="Dipl. Informatiker (FH) Alexander Dick – Principal Software Developer für .NET 10 Backend, moderne APIs und End-to-End AI-Driven Software Engineering (Multi-Agent Workflows, MCP, Azure DevOps) in Augsburg &amp; remote." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <style>
-        :root {
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-            --transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-            --bg: #070b14;
-            --bg-elevated: #0d1322;
-            --surface: rgba(15, 23, 42, 0.72);
-            --surface-solid: #0f172a;
-            --surface-hover: #162038;
-            --border: rgba(148, 163, 184, 0.14);
-            --border-strong: rgba(56, 189, 248, 0.35);
-            --text: #f8fafc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --accent: #38bdf8;
-            --accent-secondary: #818cf8;
-            --accent-glow: rgba(56, 189, 248, 0.16);
-            --btn-primary-bg: #38bdf8;
-            --btn-primary-text: #040914;
-            --btn-primary-hover: #7dd3fc;
-            --badge-bg: rgba(56, 189, 248, 0.1);
-            --badge-text: #7dd3fc;
-            --badge-border: rgba(56, 189, 248, 0.25);
-            --grid-color: rgba(148, 163, 184, 0.05);
-            --code-bg: #050810;
-            --shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.65);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
-            background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-            background-size: 44px 44px;
-        }
-
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            background: rgba(7, 11, 20, 0.82);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 68px;
-            gap: 16px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .brand-mark {
-            width: 30px;
-            height: 30px;
-            border-radius: 7px;
-            background: var(--badge-bg);
-            border: 1px solid var(--border-strong);
-            display: grid;
-            place-items: center;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-            .nav-links a {
-                text-decoration: none;
-                color: var(--text-secondary);
-                font-size: 0.9rem;
-                font-weight: 500;
-                transition: color var(--transition);
-            }
-
-                .nav-links a:hover {
-                    color: var(--text);
-                }
-
-        .hero {
-            padding: 76px 0 72px;
-            position: relative;
-        }
-
-            .hero::before {
-                content: "";
-                position: absolute;
-                top: -40px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 680px;
-                height: 320px;
-                background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-                pointer-events: none;
-                z-index: -1;
-            }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 44px;
-            align-items: center;
-        }
-
-        .identity-row {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            margin-bottom: 24px;
-        }
-
-        .avatar-ring {
-            width: 132px;
-            height: 132px;
-            border-radius: 50%;
-            padding: 3px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.22);
-            flex-shrink: 0;
-        }
-
-            .avatar-ring img {
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                object-fit: cover;
-                object-position: center 15%;
-                display: block;
-                background: var(--bg-elevated);
-            }
-
-        .identity-meta {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-        }
-
-        .status-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 13px;
-            border-radius: 999px;
-            background: var(--badge-bg);
-            border: 1px solid var(--badge-border);
-            color: var(--badge-text);
-            font-family: var(--font-mono);
-            font-size: 0.78rem;
-            font-weight: 500;
-        }
-
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #10b981;
-            box-shadow: 0 0 8px #10b981;
-            flex-shrink: 0;
-        }
-
-        .identity-sub {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            padding-left: 4px;
-        }
-
-        h1 {
-            font-size: clamp(2.05rem, 4vw, 3rem);
-            font-weight: 800;
-            line-height: 1.14;
-            letter-spacing: -0.03em;
-            margin-bottom: 20px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-lead {
-            font-size: 1.06rem;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-            max-width: 580px;
-        }
-
-        .cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 36px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 20px;
-            border-radius: 9px;
-            font-size: 0.92rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            border: 1px solid transparent;
-            transition: all var(--transition);
-        }
-
-        .btn-primary {
-            background: var(--btn-primary-bg);
-            color: var(--btn-primary-text);
-        }
-
-            .btn-primary:hover {
-                background: var(--btn-primary-hover);
-                transform: translateY(-1px);
-            }
-
-        .btn-secondary {
-            background: var(--surface-solid);
-            color: var(--text);
-            border-color: var(--border);
-        }
-
-            .btn-secondary:hover {
-                border-color: var(--border-strong);
-                background: var(--surface-hover);
-            }
-
-        .metrics-bar {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-        }
-
-        .metric-val {
-            font-family: var(--font-mono);
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text);
-        }
-
-        .metric-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        .arch-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            backdrop-filter: blur(12px);
-        }
-
-        .arch-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            background: var(--bg-elevated);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .window-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-            .window-dots span {
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: var(--border-strong);
-                opacity: 0.6;
-            }
-
-        .arch-tabs {
-            display: flex;
-            gap: 6px;
-        }
-
-        .arch-tab {
-            background: transparent;
-            border: 1px solid transparent;
-            color: var(--text-muted);
-            font-family: var(--font-mono);
-            font-size: 0.74rem;
-            padding: 4px 10px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-            .arch-tab.active {
-                background: var(--badge-bg);
-                color: var(--accent);
-                border-color: var(--badge-border);
-            }
-
-        .arch-body {
-            padding: 20px;
-        }
-
-        .topology-flow {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .node {
-            padding: 12px 14px;
-            border-radius: 9px;
-            background: var(--code-bg);
-            border: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .node-title {
-            font-family: var(--font-mono);
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        .node-sub {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        .node-tag {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            padding: 3px 8px;
-            border-radius: 5px;
-            background: var(--badge-bg);
-            color: var(--badge-text);
-        }
-
-        .connector {
-            text-align: center;
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--accent);
-            letter-spacing: 0.04em;
-        }
-
-        pre.code-view {
-            display: none;
-            background: var(--code-bg);
-            border: 1px solid var(--border);
-            border-radius: 9px;
-            padding: 14px;
-            font-family: var(--font-mono);
-            font-size: 0.76rem;
-            line-height: 1.55;
-            color: var(--text-secondary);
-            overflow-x: auto;
-        }
-
-        .kw {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .tp {
-            color: var(--accent-secondary);
-        }
-
-        .cm {
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        section {
-            padding: 72px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .section-eyebrow {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: clamp(1.6rem, 3vw, 2.1rem);
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            margin-bottom: 14px;
-        }
-
-        .section-desc {
-            color: var(--text-secondary);
-            max-width: 670px;
-            margin-bottom: 40px;
-            font-size: 1rem;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            transition: border-color var(--transition), transform var(--transition);
-        }
-
-            .card:hover {
-                border-color: var(--border-strong);
-                transform: translateY(-2px);
-            }
-
-        .card-icon {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--accent);
-            background: var(--badge-bg);
-            border: 1px solid var(--badge-border);
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 6px;
-            margin-bottom: 16px;
-        }
-
-        .card h3 {
-            font-size: 1.06rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -0.01em;
-        }
-
-        .card p {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-        }
-
-        .scenario-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .scenario {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 26px;
-        }
-
-        .scenario-meta {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .scenario h3 {
-            font-size: 1.08rem;
-            margin-bottom: 10px;
-        }
-
-        .scenario p {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-        }
-
-        .mini-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .mini-tag {
-            font-family: var(--font-mono);
-            font-size: 0.73rem;
-            padding: 3px 9px;
-            border-radius: 5px;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-        }
-
-        .stack-groups {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-        }
-
-        .stack-group h4 {
-            font-family: var(--font-mono);
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 12px;
-        }
-
-        .pill-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .pill {
-            padding: 6px 12px;
-            border-radius: 7px;
-            background: var(--badge-bg);
-            border: 1px solid var(--badge-border);
-            color: var(--badge-text);
-            font-size: 0.84rem;
-            font-weight: 500;
-        }
-
-        .contact-panel {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 36px;
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 32px;
-            align-items: center;
-        }
-
-            .contact-panel h3 {
-                font-size: 1.35rem;
-                margin-bottom: 12px;
-                letter-spacing: -0.02em;
-            }
-
-            .contact-panel p {
-                color: var(--text-secondary);
-                font-size: 0.95rem;
-                margin-bottom: 22px;
-            }
-
-        .contact-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .contact-card {
-            background: var(--code-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 22px;
-            font-size: 0.9rem;
-        }
-
-        .contact-item {
-            margin-bottom: 14px;
-        }
-
-            .contact-item:last-child {
-                margin-bottom: 0;
-            }
-
-        .contact-label {
-            font-family: var(--font-mono);
-            font-size: 0.74rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        .contact-value {
-            color: var(--text);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-            .contact-value:hover {
-                color: var(--accent);
-            }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 48px 0 64px;
-            background: var(--bg-elevated);
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 32px;
-        }
-
-        footer h4 {
-            color: var(--text);
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-            footer a:hover {
-                text-decoration: underline;
-            }
-
-        @media (max-width: 860px) {
-            .hero-grid, .contact-panel, .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links a {
-                display: none;
-            }
-
-            .hero {
-                padding: 52px 0;
-            }
-
-            .identity-row {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -698,11 +19,15 @@
                 <span>Alexander Dick</span>
             </a>
             <nav class="nav-links">
-                <a href="#leistungen">Leistungen</a>
-                <a href="#praxis">Schwerpunkte</a>
-                <a href="#stack">Tech-Stack</a>
-                <a href="#kontakt">Kontakt</a>
-                <a href="#impressum">Impressum</a>
+                <a href="#leistungen" data-i18n="nav_services">Leistungen</a>
+                <a href="#praxis" data-i18n="nav_focus">Schwerpunkte</a>
+                <a href="#stack" data-i18n="nav_stack">Tech-Stack</a>
+                <a href="#kontakt" data-i18n="nav_contact">Kontakt</a>
+                <a href="#impressum" data-i18n="nav_legal">Impressum</a>
+                <div class="lang-switch" role="group" aria-label="Language switch">
+                    <button type="button" class="lang-btn active" id="btnDe" onclick="setLang('de')">DE</button>
+                    <button type="button" class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+                </div>
             </nav>
         </div>
     </header>
@@ -713,32 +38,32 @@
                 <div>
                     <div class="identity-row">
                         <div class="avatar-ring">
-                            <img src="profil.png" alt="Alexander Dick – Principal Software Developer" />
+                            <img src="profile.png" alt="Alexander Dick – Principal Software Developer" />
                         </div>
                         <div class="identity-meta">
                             <div class="status-pill">
                                 <span class="status-dot"></span>
-                                <span>Dipl. Informatiker (FH) · Augsburg &amp; Remote</span>
+                                <span data-i18n="hero_pill">Dipl. Informatiker (FH) · Augsburg &amp; Remote</span>
                             </div>
-                            <div class="identity-sub">Principal Software Developer · .NET 10 &amp; AI Engineering</div>
+                            <div class="identity-sub" data-i18n="hero_sub">Principal Software Developer · .NET 10 &amp; AI Engineering</div>
                         </div>
                     </div>
-                    <h1>
+                    <h1 data-i18n-html="hero_title">
                         Principal Software Developer für <span class="gradient-text">.NET 10 &amp; AI-Driven Engineering</span>
                     </h1>
-                    <p class="hero-lead">
+                    <p class="hero-lead" data-i18n="hero_lead">
                         Über 20 Jahre Erfahrung in der Entwicklung wartbarer, geschäftskritischer .NET-Backends
                         und sauberer APIs – kombiniert mit durchgängigen Multi-Agent-Workflows, eigenen
                         Agent-Skills und MCP-Integrationen für die strukturierte Umsetzung kompletter Softwareprojekte.
                     </p>
                     <div class="cta-row">
-                        <a href="#kontakt" class="btn btn-primary">Projekt unverbindlich anfragen</a>
-                        <a href="https://github.com/alex-dick-dev" target="_blank" rel="noopener" class="btn btn-secondary">GitHub-Profil ↗</a>
+                        <a href="#kontakt" class="btn btn-primary" data-i18n="hero_cta_primary">Projekt unverbindlich anfragen</a>
+                        <a href="https://github.com/alex-dick-dev" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="hero_cta_github">GitHub-Profil ↗</a>
                     </div>
                     <div class="metrics-bar">
                         <div>
-                            <div class="metric-val">20+ Jahre</div>
-                            <div class="metric-label">Hands-on Development</div>
+                            <div class="metric-val" data-i18n="metric1_val">20+ Jahre</div>
+                            <div class="metric-label" data-i18n="metric1_lbl">Hands-on Development</div>
                         </div>
                         <div>
                             <div class="metric-val">.NET 10</div>
@@ -746,7 +71,7 @@
                         </div>
                         <div>
                             <div class="metric-val">Multi-Agent</div>
-                            <div class="metric-label">End-to-End AI Delivery</div>
+                            <div class="metric-label" data-i18n="metric3_lbl">End-to-End AI Delivery</div>
                         </div>
                     </div>
                 </div>
@@ -755,7 +80,7 @@
                     <div class="arch-header">
                         <div class="window-dots"><span></span><span></span><span></span></div>
                         <div class="arch-tabs">
-                            <button class="arch-tab active" onclick="switchTab('topo', this)">End-to-End Delivery</button>
+                            <button class="arch-tab active" onclick="switchTab('topo', this)" data-i18n="tab_delivery">End-to-End Delivery</button>
                             <button class="arch-tab" onclick="switchTab('code', this)">gRPC / .NET 10</button>
                         </div>
                     </div>
@@ -763,12 +88,12 @@
                         <div id="topoView" class="topology-flow">
                             <div class="node">
                                 <div>
-                                    <div class="node-title">Multi-Agent Orchestrierung &amp; MCP</div>
+                                    <div class="node-title" data-i18n="node1_title">Multi-Agent Orchestrierung &amp; MCP</div>
                                     <div class="node-sub">Architect · Lead · UX · Developer · Reviewer Agents</div>
                                 </div>
                                 <span class="node-tag">Agentic Flow</span>
                             </div>
-                            <div class="connector">▼ Migrationskonzepte · User Stories &amp; Tasks · Pull Requests</div>
+                            <div class="connector" data-i18n="conn1">▼ Migrationskonzepte · User Stories &amp; Tasks · Pull Requests</div>
                             <div class="node" style="border-color: var(--border-strong);">
                                 <div>
                                     <div class="node-title">.NET 10 Backend Core &amp; Service APIs</div>
@@ -776,17 +101,17 @@
                                 </div>
                                 <span class="node-tag">.NET 10 LTS</span>
                             </div>
-                            <div class="connector">▼ Azure DevOps Integration, Tests &amp; Deployment</div>
+                            <div class="connector" data-i18n="conn2">▼ Azure DevOps Integration, Tests &amp; Deployment</div>
                             <div class="node">
                                 <div>
-                                    <div class="node-title">Azure DevOps · SQL · Bestandssysteme</div>
+                                    <div class="node-title" data-i18n="node3_title">Azure DevOps · SQL · Bestandssysteme</div>
                                     <div class="node-sub">Work Items · CI/CD Pipelines · Clean Migration</div>
                                 </div>
                                 <span class="node-tag">Production</span>
                             </div>
                         </div>
 
-                        <pre id="codeView" class="code-view"><span class="cm">// Typisierter gRPC Service Contract (.NET 10 / C# 14)</span>
+                        <pre id="codeView" class="code-view"><span class="cm">// Typed gRPC Service Contract (.NET 10 / C# 14)</span>
 <span class="kw">public sealed class</span> <span class="tp">OrderIntegrationService</span>(
                         <span class="tp">IOrderDispatcher</span> dispatcher,
                         <span class="tp">ILogger</span>&lt;<span class="tp">OrderIntegrationService</span>&gt; logger)
@@ -808,48 +133,48 @@
         </section>
 
         <section id="leistungen">
-            <div class="section-eyebrow">01 // Leistungsportfolio</div>
-            <h2>.NET-Entwicklung &amp; End-to-End AI Engineering</h2>
-            <p class="section-desc">
+            <div class="section-eyebrow" data-i18n="sec1_eyebrow">01 // Leistungsportfolio</div>
+            <h2 data-i18n="sec1_title">.NET-Entwicklung &amp; End-to-End AI Engineering</h2>
+            <p class="section-desc" data-i18n="sec1_desc">
                 Pragmatische Hands-on-Umsetzung – von modernen .NET-10-Backends bis zur hochgradig
                 automatisierten Projekt- und Migrationsabwicklung mit spezialisierten AI-Agenten.
             </p>
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon">01 · .NET 10 DEV</div>
-                    <h3>Moderne .NET-10-Backends</h3>
-                    <p>Entwicklung wartbarer, testbarer Services und geschäftskritischer Anwendungen mit C# 14, ASP.NET Core und .NET 10 LTS.</p>
+                    <h3 data-i18n="card1_title">Moderne .NET-10-Backends</h3>
+                    <p data-i18n="card1_desc">Entwicklung wartbarer, testbarer Services und geschäftskritischer Anwendungen mit C# 14, ASP.NET Core und .NET 10 LTS.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">02 · MULTI-AGENT FLOW</div>
-                    <h3>AI-gestützte Projektumsetzung</h3>
-                    <p>Einsatz koordinierter Agenten-Rollen (Architect, Lead, UX, Developer, Reviewer) mit eigenen Skills und MCP-Servern für schnelle, konsistente Ergebnisse.</p>
+                    <h3 data-i18n="card2_title">AI-gestützte Projektumsetzung</h3>
+                    <p data-i18n="card2_desc">Einsatz koordinierter Agenten-Rollen (Architect, Lead, UX, Developer, Reviewer) mit eigenen Skills und MCP-Servern für schnelle, konsistente Ergebnisse.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">03 · MIGRATION &amp; PLANUNG</div>
-                    <h3>Migrationskonzepte &amp; .NET-Upgrade</h3>
-                    <p>Strukturierte Analyse gewachsener .NET-Codebasen, Erstellung belastbarer Migrationskonzepte und schrittweise Überführung auf .NET 10.</p>
+                    <h3 data-i18n="card3_title">Migrationskonzepte &amp; .NET-Upgrade</h3>
+                    <p data-i18n="card3_desc">Strukturierte Analyse gewachsener .NET-Codebasen, Erstellung belastbarer Migrationskonzepte und schrittweise Überführung auf .NET 10.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">04 · AZURE DEVOPS &amp; PR</div>
-                    <h3>Durchgängiger Delivery-Workflow</h3>
-                    <p>Nahtlose Verzahnung von Anforderungen, Azure DevOps User Stories &amp; Tasks, Implementierung, Pull Requests und Reviews über Copilot &amp; JetBrains Junie.</p>
+                    <h3 data-i18n="card4_title">Durchgängiger Delivery-Workflow</h3>
+                    <p data-i18n="card4_desc">Nahtlose Verzahnung von Anforderungen, Azure DevOps User Stories &amp; Tasks, Implementierung, Pull Requests und Reviews über Copilot &amp; JetBrains Junie.</p>
                 </div>
             </div>
         </section>
 
         <section id="praxis">
-            <div class="section-eyebrow">02 // Praxis-Schwerpunkte</div>
-            <h2>Wobei ich Unternehmen konkret unterstütze</h2>
-            <p class="section-desc">
+            <div class="section-eyebrow" data-i18n="sec2_eyebrow">02 // Praxis-Schwerpunkte</div>
+            <h2 data-i18n="sec2_title">Wobei ich Unternehmen konkret unterstütze</h2>
+            <p class="section-desc" data-i18n="sec2_desc">
                 Über 20 Jahre Erfahrung in komplexen Softwareprojekten verbunden mit modernsten
                 Multi-Agent-Workflows im täglichen Entwicklungsbetrieb.
             </p>
             <div class="scenario-list">
                 <div class="scenario">
-                    <div class="scenario-meta">FOKUS A · END-TO-END AI DELIVERY</div>
-                    <h3>Komplette Umsetzungsstrecken mit Multi-Agent-Workflows</h3>
-                    <p>Mit spezialisierten Agenten-Rollen (Architect, Lead, UX, Developer, Reviewer), eigenen Skills und MCP-Servern entstehen durchgängig strukturierte Ergebnisse – von der Konzeption über Azure DevOps User Stories &amp; Tasks bis zum fertigen Pull Request.</p>
+                    <div class="scenario-meta" data-i18n="scen1_meta">FOKUS A · END-TO-END AI DELIVERY</div>
+                    <h3 data-i18n="scen1_title">Komplette Umsetzungsstrecken mit Multi-Agent-Workflows</h3>
+                    <p data-i18n="scen1_desc">Mit spezialisierten Agenten-Rollen (Architect, Lead, UX, Developer, Reviewer), eigenen Skills und MCP-Servern entstehen durchgängig strukturierte Ergebnisse – von der Konzeption über Azure DevOps User Stories &amp; Tasks bis zum fertigen Pull Request.</p>
                     <div class="mini-tags">
                         <span class="mini-tag">Multi-Agent Setup</span>
                         <span class="mini-tag">MCP &amp; Custom Skills</span>
@@ -857,9 +182,9 @@
                     </div>
                 </div>
                 <div class="scenario">
-                    <div class="scenario-meta">FOKUS B · .NET 10 ENGINEERING</div>
-                    <h3>Hands-on Entwicklung &amp; Migration auf .NET 10</h3>
-                    <p>Direkte Mitarbeit im Code: Entwurf und Umsetzung leistungsfähiger gRPC-/REST-Services, strukturierte Migrationskonzepte für bestehende Monolithen und saubere Überführung auf .NET 10 LTS.</p>
+                    <div class="scenario-meta" data-i18n="scen2_meta">FOKUS B · .NET 10 ENGINEERING</div>
+                    <h3 data-i18n="scen2_title">Hands-on Entwicklung &amp; Migration auf .NET 10</h3>
+                    <p data-i18n="scen2_desc">Direkte Mitarbeit im Code: Entwurf und Umsetzung leistungsfähiger gRPC-/REST-Services, strukturierte Migrationskonzepte für bestehende Monolithen und saubere Überführung auf .NET 10 LTS.</p>
                     <div class="mini-tags">
                         <span class="mini-tag">.NET 10 / C# 14</span>
                         <span class="mini-tag">gRPC &amp; REST</span>
@@ -867,9 +192,9 @@
                     </div>
                 </div>
                 <div class="scenario">
-                    <div class="scenario-meta">FOKUS C · MODERN TOOLCHAIN</div>
-                    <h3>Produktivität &amp; Qualität über die gesamte Toolchain</h3>
-                    <p>Verbindung klassischer CI/CD-Pipelines mit intelligenten Agent-Workflows in GitHub Copilot, JetBrains Junie / AIR und M365 Copilot – für saubere Spezifikationen, hohe Testabdeckung und verlässliche Releases.</p>
+                    <div class="scenario-meta" data-i18n="scen3_meta">FOKUS C · MODERN TOOLCHAIN</div>
+                    <h3 data-i18n="scen3_title">Produktivität &amp; Qualität über die gesamte Toolchain</h3>
+                    <p data-i18n="scen3_desc">Verbindung klassischer CI/CD-Pipelines mit intelligenten Agent-Workflows in GitHub Copilot, JetBrains Junie / AIR und M365 Copilot – für saubere Spezifikationen, hohe Testabdeckung und verlässliche Releases.</p>
                     <div class="mini-tags">
                         <span class="mini-tag">GitHub Copilot</span>
                         <span class="mini-tag">JetBrains Junie / AIR</span>
@@ -880,9 +205,9 @@
         </section>
 
         <section id="stack">
-            <div class="section-eyebrow">03 // Technologie-Stack</div>
-            <h2>Kernkompetenzen &amp; Werkzeuge</h2>
-            <p class="section-desc">
+            <div class="section-eyebrow" data-i18n="sec3_eyebrow">03 // Technologie-Stack</div>
+            <h2 data-i18n="sec3_title">Kernkompetenzen &amp; Werkzeuge</h2>
+            <p class="section-desc" data-i18n="sec3_desc">
                 Fokus auf modernes .NET-Backend-Engineering und durchgängige AI-Entwicklungsumgebungen.
             </p>
             <div class="stack-groups">
@@ -909,7 +234,7 @@
                     </div>
                 </div>
                 <div class="stack-group">
-                    <h4>Daten &amp; Delivery</h4>
+                    <h4 data-i18n="stack3_head">Daten &amp; Delivery</h4>
                     <div class="pill-wrap">
                         <span class="pill">SQL Server / SQL</span>
                         <span class="pill">Entity Framework Core</span>
@@ -922,33 +247,33 @@
         </section>
 
         <section id="kontakt">
-            <div class="section-eyebrow">04 // Kontakt</div>
+            <div class="section-eyebrow" data-i18n="sec4_eyebrow">04 // Kontakt</div>
             <div class="contact-panel">
                 <div>
-                    <h3>Gespräch oder Projektanfrage starten</h3>
-                    <p>
+                    <h3 data-i18n="contact_title">Gespräch oder Projektanfrage starten</h3>
+                    <p data-i18n="contact_desc">
                         Sie suchen erfahrene Unterstützung in der .NET-10-Entwicklung, bei der Konzeption und
                         Umsetzung einer .NET-Migration oder für AI-gestützte Entwicklungsprozesse?
                         Schreiben Sie mir gerne direkt per E-Mail oder über das Kontaktformular.
                     </p>
                     <div class="contact-actions">
-                        <a href="mailto:alexander.dick.dev@googlemail.com?subject=Projektanfrage%20%E2%80%93%20.NET%2010%20%26%20AI%20Engineering" class="btn btn-primary">Direkt per E-Mail schreiben</a>
-                        <button type="button" class="btn btn-secondary" id="copyMailBtn" onclick="copyEmail()">E-Mail-Adresse kopieren</button>
-                        <a href="https://sites.google.com/view/alexander-dick-dev" target="_blank" rel="noopener" class="btn btn-secondary">Kontaktformular öffnen ↗</a>
+                        <a id="mailCta" href="mailto:alexander.dick.dev@googlemail.com?subject=Projektanfrage%20%E2%80%93%20.NET%2010%20%26%20AI%20Engineering" class="btn btn-primary" data-i18n="contact_btn_mail">Direkt per E-Mail schreiben</a>
+                        <button type="button" class="btn btn-secondary" id="copyMailBtn" onclick="copyEmail()" data-i18n="contact_btn_copy">E-Mail-Adresse kopieren</button>
+                        <a href="https://sites.google.com/view/alexander-dick-dev" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="contact_btn_form">Kontaktformular öffnen ↗</a>
                     </div>
                 </div>
 
                 <div class="contact-card">
                     <div class="contact-item">
-                        <span class="contact-label">Direktkontakt</span>
+                        <span class="contact-label" data-i18n="contact_lbl_direct">Direktkontakt</span>
                         <a href="mailto:alexander.dick.dev@googlemail.com" class="contact-value">alexander.dick.dev@googlemail.com</a>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-label">Standort &amp; Einsatzgebiet</span>
-                        <span class="contact-value">Augsburg, Bayern · Remote (DACH)</span>
+                        <span class="contact-label" data-i18n="contact_lbl_loc">Standort &amp; Einsatzgebiet</span>
+                        <span class="contact-value" data-i18n="contact_val_loc">Augsburg, Bayern · Remote (DACH)</span>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-label">Code &amp; Profil</span>
+                        <span class="contact-label" data-i18n="contact_lbl_code">Code &amp; Profil</span>
                         <a href="https://github.com/alex-dick-dev" target="_blank" rel="noopener" class="contact-value">github.com/alex-dick-dev ↗</a>
                     </div>
                 </div>
@@ -959,16 +284,16 @@
     <footer id="impressum">
         <div class="container footer-grid">
             <div>
-                <h4>Impressum (Angaben gemäß § 5 DDG)</h4>
-                <p>
+                <h4 data-i18n="legal_title">Impressum (Angaben gemäß § 5 DDG)</h4>
+                <p data-i18n-html="legal_body">
                     Alexander Dick – Softwareentwicklung &amp; IT-Beratung (Freiberufliche Tätigkeit)<br />
                     Philipp-Scheidemann-Straße 8, 86199 Augsburg, Deutschland<br />
                     E-Mail: <a href="mailto:alexander.dick.dev@googlemail.com">alexander.dick.dev@googlemail.com</a>
                 </p>
             </div>
             <div>
-                <h4>Hinweis zum Datenschutz</h4>
-                <p>
+                <h4 data-i18n="privacy_title">Hinweis zum Datenschutz</h4>
+                <p data-i18n="privacy_body">
                     Diese Website setzt keine Cookies und verwendet keine Tracking- oder Analyse-Dienste.
                     Beim Aufruf über GitHub Pages werden lediglich technisch notwendige Verbindungsdaten
                     durch den Hosting-Anbieter (GitHub, Inc.) verarbeitet.
@@ -977,22 +302,7 @@
         </div>
     </footer>
 
-    <script>
-            function switchTab(view, btn) {
-              document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
-              btn.classList.add('active');
-              document.getElementById('topoView').style.display = view === 'topo' ? 'flex' : 'none';
-              document.getElementById('codeView').style.display = view === 'code' ? 'block' : 'none';
-            }
-
-            function copyEmail() {
-              navigator.clipboard.writeText('alexander.dick.dev@googlemail.com').then(() => {
-                const btn = document.getElementById('copyMailBtn');
-                const original = btn.textContent;
-                btn.textContent = '✓ Kopiert!';
-                setTimeout(() => { btn.textContent = original; }, 2200);
-              });
-            }
-    </script>
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
