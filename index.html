@@ -1,308 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alexander Dick | Principal Software Developer · .NET 10 &amp; AI-Driven Engineering</title>
-    <meta id="metaDesc" name="description" content="Dipl. Informatiker (FH) Alexander Dick – Principal Software Developer für .NET 10 Backend, moderne APIs und End-to-End AI-Driven Software Engineering (Multi-Agent Workflows, MCP, Azure DevOps) in Augsburg &amp; remote." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" id="metaDescription" content="Diplom-Informatiker (FH), mehr als 20 Jahre .NET-Erfahrung: individuelle Entwicklung, Modernisierung, Architekturberatung und Reviews. Augsburg und remote.">
+<link rel="canonical" href="https://alex-dick-dev.github.io/">
+<title>Alexander Dick · .NET-Entwicklung &amp; Beratung</title>
+<style>
+:root{color-scheme:dark;--base:#070b14;--band:#0e1524;--ink:#f8fafc;--muted:#aebdd0;--accent:#7dd3fc;--line:#26354b}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;color:var(--ink);background:var(--base);font:16px/1.6 Inter,"Segoe UI",system-ui,sans-serif}
+.wrap{width:min(1120px,calc(100% - 64px));margin-inline:auto}
+a{color:inherit;text-underline-offset:.25em}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+header,footer{background:var(--base);border-color:var(--line);border-style:solid;border-width:0 0 1px}
+header .wrap,footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:16px}
+.brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-weight:750}
+.mark{display:grid;place-items:center;width:34px;height:34px;border:1px solid #3a647e;border-radius:7px;background:#102234;color:var(--accent);font:700 .75rem Consolas,monospace}
+nav,.switch,.actions,.legal{display:flex;align-items:center;flex-wrap:wrap;gap:14px}
+nav{gap:clamp(12px,2.4vw,27px);font-size:.91rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover,nav a[aria-current]{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent)}
+.switch{gap:2px;background:#111b2c;padding:3px;border:1px solid var(--line);border-radius:8px}
+.switch button{border:0;border-radius:5px;background:transparent;color:var(--muted);font:700 .8rem Consolas,monospace;padding:7px 9px;cursor:pointer}
+.switch button[aria-pressed=true]{color:var(--base);background:var(--accent)}
+.hero{background:radial-gradient(ellipse at 82% 25%,#163653a8,transparent 58%),linear-gradient(#8aa6cd0c 1px,transparent 1px),linear-gradient(90deg,#8aa6cd0c 1px,transparent 1px);background-size:auto,44px 44px,44px 44px}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);align-items:center;gap:clamp(28px,6vw,78px)}
+.section{padding-block:clamp(38px,7vw,88px)}
+.eyebrow,.num{font:700 .76rem/1.4 Consolas,"JetBrains Mono",monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{line-height:1.13;letter-spacing:-.032em}
+h1{font-size:clamp(2.4rem,5.4vw,4.6rem);margin-block:14px 21px;overflow-wrap:anywhere}
+h1 strong{display:block;color:var(--accent);font-weight:inherit}
+h2{font-size:clamp(1.75rem,4vw,2.8rem);margin-block:8px 14px}
+h3{font-size:1.28rem}
+.lead{max-width:62ch;color:var(--muted);font-size:clamp(1.04rem,1.8vw,1.19rem)}
+.actions{margin-top:24px;gap:16px 21px}
+.button{display:inline-block;padding:11px 16px;border-radius:6px;background:#38bdf8;color:#040914;font-weight:750;text-decoration:none}
+.button:hover{background:#a5e3fc}
+.identity{border-left:1px solid #3b6683;padding-left:clamp(15px,3vw,34px);margin:0}
+.identity img{display:block;width:clamp(90px,18vw,220px);height:auto;aspect-ratio:1;object-fit:cover;border-radius:12px;border:1px solid #5281a0}
+.identity figcaption{margin-top:14px}
+.identity b{display:block;font-size:1.25rem}
+.identity small{display:block;color:var(--muted);font-size:.91rem}
+.band{background:var(--band);border-block:1px solid var(--line)}
+.overview,.service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.overview{margin-top:26px}
+.service-grid{margin-top:32px}
+.service-card{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:clamp(16px,2.4vw,25px);background:#111b2c;border:1px solid var(--line);border-radius:9px}
+.overview a{text-decoration:none}
+.overview a:hover,.detail:target{border-color:var(--accent)}
+.service-link{margin-top:auto;padding-top:4px;color:var(--accent);font-size:.88rem;font-weight:700;text-decoration:underline;text-underline-offset:.25em}
+.overview p,.muted{color:var(--muted)}
+.contact{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.contact p{max-width:65ch;color:var(--muted)}
+.contact .actions{margin-top:0}
+.page-head{border-bottom:1px solid var(--line);background:linear-gradient(105deg,#13253b,var(--base) 75%)}
+.page-head h1{font-size:clamp(2.15rem,4.8vw,3.8rem)}
+.detail{scroll-margin-top:16px}
+.detail h2{margin:0;font-size:1.28rem}
+.split h2{font-size:clamp(1.3rem,3vw,1.8rem)}
+.prose p+p{margin-top:10px}
+.result{margin-top:auto;padding-top:4px;color:var(--accent);font-weight:700}
+.split{display:grid;grid-template-columns:1fr 1.65fr;gap:18px 42px;align-items:start}
+.stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 32px;margin:0}
+.stack div{border-top:1px solid var(--line);padding-top:12px}
+dt{font-weight:750}
+dd{margin:4px 0 0;color:var(--muted)}
+.ai{margin-top:30px;border-left:2px solid var(--accent);background:#121f32;padding:20px}
+.ai h3{margin-bottom:8px}
+footer{border-width:1px 0 0;color:var(--muted);font-size:.9rem}
+@media(max-width:620px){.wrap{width:calc(100% - 34px)}.hero-inner,.overview,.service-grid,.split,.stack{grid-template-columns:1fr}.identity{display:flex;gap:13px;align-items:center}.identity figcaption{margin-top:0}.overview h3,.detail h2{font-size:1.15rem;overflow-wrap:anywhere}}
+</style>
 </head>
 <body>
-
-    <header>
-        <div class="container nav-inner">
-            <a href="#" class="brand">
-                <span class="brand-mark">AD</span>
-                <span>Alexander Dick</span>
-            </a>
-            <nav class="nav-links">
-                <a href="#leistungen" data-i18n="nav_services">Leistungen</a>
-                <a href="#praxis" data-i18n="nav_focus">Schwerpunkte</a>
-                <a href="#stack" data-i18n="nav_stack">Tech-Stack</a>
-                <a href="#kontakt" data-i18n="nav_contact">Kontakt</a>
-                <a href="#impressum" data-i18n="nav_legal">Impressum</a>
-                <div class="lang-switch" role="group" aria-label="Language switch">
-                    <button type="button" class="lang-btn active" id="btnDe" onclick="setLang('de')">DE</button>
-                    <button type="button" class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="hero" style="border-top: none;">
-            <div class="hero-grid">
-                <div>
-                    <div class="identity-row">
-                        <div class="avatar-ring">
-                            <img src="profile.png" alt="Alexander Dick – Principal Software Developer" />
-                        </div>
-                        <div class="identity-meta">
-                            <div class="status-pill">
-                                <span class="status-dot"></span>
-                                <span data-i18n="hero_pill">Dipl. Informatiker (FH) · Augsburg &amp; Remote</span>
-                            </div>
-                            <div class="identity-sub" data-i18n="hero_sub">Principal Software Developer · .NET 10 &amp; AI Engineering</div>
-                        </div>
-                    </div>
-                    <h1 data-i18n-html="hero_title">
-                        Principal Software Developer für <span class="gradient-text">.NET 10 &amp; AI-Driven Engineering</span>
-                    </h1>
-                    <p class="hero-lead" data-i18n="hero_lead">
-                        Über 20 Jahre Erfahrung in der Entwicklung wartbarer, geschäftskritischer .NET-Backends
-                        und sauberer APIs – kombiniert mit durchgängigen Multi-Agent-Workflows, eigenen
-                        Agent-Skills und MCP-Integrationen für die strukturierte Umsetzung kompletter Softwareprojekte.
-                    </p>
-                    <div class="cta-row">
-                        <a href="#kontakt" class="btn btn-primary" data-i18n="hero_cta_primary">Projekt unverbindlich anfragen</a>
-                        <a href="https://github.com/alex-dick-dev" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="hero_cta_github">GitHub-Profil ↗</a>
-                    </div>
-                    <div class="metrics-bar">
-                        <div>
-                            <div class="metric-val" data-i18n="metric1_val">20+ Jahre</div>
-                            <div class="metric-label" data-i18n="metric1_lbl">Hands-on Development</div>
-                        </div>
-                        <div>
-                            <div class="metric-val">.NET 10</div>
-                            <div class="metric-label">C# 14 &amp; ASP.NET Core</div>
-                        </div>
-                        <div>
-                            <div class="metric-val">Multi-Agent</div>
-                            <div class="metric-label" data-i18n="metric3_lbl">End-to-End AI Delivery</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="arch-card">
-                    <div class="arch-header">
-                        <div class="window-dots"><span></span><span></span><span></span></div>
-                        <div class="arch-tabs">
-                            <button class="arch-tab active" onclick="switchTab('topo', this)" data-i18n="tab_delivery">End-to-End Delivery</button>
-                            <button class="arch-tab" onclick="switchTab('code', this)">gRPC / .NET 10</button>
-                        </div>
-                    </div>
-                    <div class="arch-body">
-                        <div id="topoView" class="topology-flow">
-                            <div class="node">
-                                <div>
-                                    <div class="node-title" data-i18n="node1_title">Multi-Agent Orchestrierung &amp; MCP</div>
-                                    <div class="node-sub">Architect · Lead · UX · Developer · Reviewer Agents</div>
-                                </div>
-                                <span class="node-tag">Agentic Flow</span>
-                            </div>
-                            <div class="connector" data-i18n="conn1">▼ Migrationskonzepte · User Stories &amp; Tasks · Pull Requests</div>
-                            <div class="node" style="border-color: var(--border-strong);">
-                                <div>
-                                    <div class="node-title">.NET 10 Backend Core &amp; Service APIs</div>
-                                    <div class="node-sub">C# 14 · ASP.NET Core · gRPC &amp; REST</div>
-                                </div>
-                                <span class="node-tag">.NET 10 LTS</span>
-                            </div>
-                            <div class="connector" data-i18n="conn2">▼ Azure DevOps Integration, Tests &amp; Deployment</div>
-                            <div class="node">
-                                <div>
-                                    <div class="node-title" data-i18n="node3_title">Azure DevOps · SQL · Bestandssysteme</div>
-                                    <div class="node-sub">Work Items · CI/CD Pipelines · Clean Migration</div>
-                                </div>
-                                <span class="node-tag">Production</span>
-                            </div>
-                        </div>
-
-                        <pre id="codeView" class="code-view"><span class="cm">// Typed gRPC Service Contract (.NET 10 / C# 14)</span>
-<span class="kw">public sealed class</span> <span class="tp">OrderIntegrationService</span>(
-                        <span class="tp">IOrderDispatcher</span> dispatcher,
-                        <span class="tp">ILogger</span>&lt;<span class="tp">OrderIntegrationService</span>&gt; logger)
-    : <span class="tp">Integration</span>.<span class="tp">IntegrationBase</span>
-{
-                        <span class="kw">public override async</span> <span class="tp">Task</span>&lt;<span class="tp">SyncResponse</span>&gt; <span class="tp">PublishBatch</span>(
-                        <span class="tp">BatchRequest</span> request,
-                        <span class="tp">ServerCallContext</span> context)
-    {
-                        <span class="kw">var</span> processed = <span class="kw">await</span> dispatcher
-            .DispatchAsync(request.Items, context.CancellationToken);
-
-                        <span class="kw">return new</span> <span class="tp">SyncResponse</span> { ProcessedCount = processed };
-    }
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="leistungen">
-            <div class="section-eyebrow" data-i18n="sec1_eyebrow">01 // Leistungsportfolio</div>
-            <h2 data-i18n="sec1_title">.NET-Entwicklung &amp; End-to-End AI Engineering</h2>
-            <p class="section-desc" data-i18n="sec1_desc">
-                Pragmatische Hands-on-Umsetzung – von modernen .NET-10-Backends bis zur hochgradig
-                automatisierten Projekt- und Migrationsabwicklung mit spezialisierten AI-Agenten.
-            </p>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">01 · .NET 10 DEV</div>
-                    <h3 data-i18n="card1_title">Moderne .NET-10-Backends</h3>
-                    <p data-i18n="card1_desc">Entwicklung wartbarer, testbarer Services und geschäftskritischer Anwendungen mit C# 14, ASP.NET Core und .NET 10 LTS.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">02 · MULTI-AGENT FLOW</div>
-                    <h3 data-i18n="card2_title">AI-gestützte Projektumsetzung</h3>
-                    <p data-i18n="card2_desc">Einsatz koordinierter Agenten-Rollen (Architect, Lead, UX, Developer, Reviewer) mit eigenen Skills und MCP-Servern für schnelle, konsistente Ergebnisse.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">03 · MIGRATION &amp; PLANUNG</div>
-                    <h3 data-i18n="card3_title">Migrationskonzepte &amp; .NET-Upgrade</h3>
-                    <p data-i18n="card3_desc">Strukturierte Analyse gewachsener .NET-Codebasen, Erstellung belastbarer Migrationskonzepte und schrittweise Überführung auf .NET 10.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">04 · AZURE DEVOPS &amp; PR</div>
-                    <h3 data-i18n="card4_title">Durchgängiger Delivery-Workflow</h3>
-                    <p data-i18n="card4_desc">Nahtlose Verzahnung von Anforderungen, Azure DevOps User Stories &amp; Tasks, Implementierung, Pull Requests und Reviews über Copilot &amp; JetBrains Junie.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="praxis">
-            <div class="section-eyebrow" data-i18n="sec2_eyebrow">02 // Praxis-Schwerpunkte</div>
-            <h2 data-i18n="sec2_title">Wobei ich Unternehmen konkret unterstütze</h2>
-            <p class="section-desc" data-i18n="sec2_desc">
-                Über 20 Jahre Erfahrung in komplexen Softwareprojekten verbunden mit modernsten
-                Multi-Agent-Workflows im täglichen Entwicklungsbetrieb.
-            </p>
-            <div class="scenario-list">
-                <div class="scenario">
-                    <div class="scenario-meta" data-i18n="scen1_meta">FOKUS A · END-TO-END AI DELIVERY</div>
-                    <h3 data-i18n="scen1_title">Komplette Umsetzungsstrecken mit Multi-Agent-Workflows</h3>
-                    <p data-i18n="scen1_desc">Mit spezialisierten Agenten-Rollen (Architect, Lead, UX, Developer, Reviewer), eigenen Skills und MCP-Servern entstehen durchgängig strukturierte Ergebnisse – von der Konzeption über Azure DevOps User Stories &amp; Tasks bis zum fertigen Pull Request.</p>
-                    <div class="mini-tags">
-                        <span class="mini-tag">Multi-Agent Setup</span>
-                        <span class="mini-tag">MCP &amp; Custom Skills</span>
-                        <span class="mini-tag">Azure DevOps &amp; PRs</span>
-                    </div>
-                </div>
-                <div class="scenario">
-                    <div class="scenario-meta" data-i18n="scen2_meta">FOKUS B · .NET 10 ENGINEERING</div>
-                    <h3 data-i18n="scen2_title">Hands-on Entwicklung &amp; Migration auf .NET 10</h3>
-                    <p data-i18n="scen2_desc">Direkte Mitarbeit im Code: Entwurf und Umsetzung leistungsfähiger gRPC-/REST-Services, strukturierte Migrationskonzepte für bestehende Monolithen und saubere Überführung auf .NET 10 LTS.</p>
-                    <div class="mini-tags">
-                        <span class="mini-tag">.NET 10 / C# 14</span>
-                        <span class="mini-tag">gRPC &amp; REST</span>
-                        <span class="mini-tag">Legacy → .NET 10</span>
-                    </div>
-                </div>
-                <div class="scenario">
-                    <div class="scenario-meta" data-i18n="scen3_meta">FOKUS C · MODERN TOOLCHAIN</div>
-                    <h3 data-i18n="scen3_title">Produktivität &amp; Qualität über die gesamte Toolchain</h3>
-                    <p data-i18n="scen3_desc">Verbindung klassischer CI/CD-Pipelines mit intelligenten Agent-Workflows in GitHub Copilot, JetBrains Junie / AIR und M365 Copilot – für saubere Spezifikationen, hohe Testabdeckung und verlässliche Releases.</p>
-                    <div class="mini-tags">
-                        <span class="mini-tag">GitHub Copilot</span>
-                        <span class="mini-tag">JetBrains Junie / AIR</span>
-                        <span class="mini-tag">M365 Copilot</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="stack">
-            <div class="section-eyebrow" data-i18n="sec3_eyebrow">03 // Technologie-Stack</div>
-            <h2 data-i18n="sec3_title">Kernkompetenzen &amp; Werkzeuge</h2>
-            <p class="section-desc" data-i18n="sec3_desc">
-                Fokus auf modernes .NET-Backend-Engineering und durchgängige AI-Entwicklungsumgebungen.
-            </p>
-            <div class="stack-groups">
-                <div class="stack-group">
-                    <h4>.NET &amp; Backend</h4>
-                    <div class="pill-wrap">
-                        <span class="pill">.NET 10 (LTS)</span>
-                        <span class="pill">C# 14</span>
-                        <span class="pill">ASP.NET Core</span>
-                        <span class="pill">gRPC &amp; Protobuf</span>
-                        <span class="pill">REST / OpenAPI</span>
-                        <span class="pill">.NET Framework Migration</span>
-                    </div>
-                </div>
-                <div class="stack-group">
-                    <h4>AI Engineering &amp; Agents</h4>
-                    <div class="pill-wrap">
-                        <span class="pill">Multi-Agent Workflows</span>
-                        <span class="pill">MCP Server</span>
-                        <span class="pill">Custom Agent Skills</span>
-                        <span class="pill">GitHub Copilot</span>
-                        <span class="pill">JetBrains Junie &amp; AIR</span>
-                        <span class="pill">M365 Copilot</span>
-                    </div>
-                </div>
-                <div class="stack-group">
-                    <h4 data-i18n="stack3_head">Daten &amp; Delivery</h4>
-                    <div class="pill-wrap">
-                        <span class="pill">SQL Server / SQL</span>
-                        <span class="pill">Entity Framework Core</span>
-                        <span class="pill">Azure DevOps &amp; Boards</span>
-                        <span class="pill">CI/CD Pipelines</span>
-                        <span class="pill">Docker &amp; Linux</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="kontakt">
-            <div class="section-eyebrow" data-i18n="sec4_eyebrow">04 // Kontakt</div>
-            <div class="contact-panel">
-                <div>
-                    <h3 data-i18n="contact_title">Gespräch oder Projektanfrage starten</h3>
-                    <p data-i18n="contact_desc">
-                        Sie suchen erfahrene Unterstützung in der .NET-10-Entwicklung, bei der Konzeption und
-                        Umsetzung einer .NET-Migration oder für AI-gestützte Entwicklungsprozesse?
-                        Schreiben Sie mir gerne direkt per E-Mail oder über das Kontaktformular.
-                    </p>
-                    <div class="contact-actions">
-                        <a id="mailCta" href="mailto:alexander.dick.dev@googlemail.com?subject=Projektanfrage%20%E2%80%93%20.NET%2010%20%26%20AI%20Engineering" class="btn btn-primary" data-i18n="contact_btn_mail">Direkt per E-Mail schreiben</a>
-                        <button type="button" class="btn btn-secondary" id="copyMailBtn" onclick="copyEmail()" data-i18n="contact_btn_copy">E-Mail-Adresse kopieren</button>
-                        <a href="https://sites.google.com/view/alexander-dick-dev" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="contact_btn_form">Kontaktformular öffnen ↗</a>
-                    </div>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-item">
-                        <span class="contact-label" data-i18n="contact_lbl_direct">Direktkontakt</span>
-                        <a href="mailto:alexander.dick.dev@googlemail.com" class="contact-value">alexander.dick.dev@googlemail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label" data-i18n="contact_lbl_loc">Standort &amp; Einsatzgebiet</span>
-                        <span class="contact-value" data-i18n="contact_val_loc">Augsburg, Bayern · Remote (DACH)</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label" data-i18n="contact_lbl_code">Code &amp; Profil</span>
-                        <a href="https://github.com/alex-dick-dev" target="_blank" rel="noopener" class="contact-value">github.com/alex-dick-dev ↗</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer id="impressum">
-        <div class="container footer-grid">
-            <div>
-                <h4 data-i18n="legal_title">Impressum (Angaben gemäß § 5 DDG)</h4>
-                <p data-i18n-html="legal_body">
-                    Alexander Dick – Softwareentwicklung &amp; IT-Beratung (Freiberufliche Tätigkeit)<br />
-                    Philipp-Scheidemann-Straße 8, 86199 Augsburg, Deutschland<br />
-                    E-Mail: <a href="mailto:alexander.dick.dev@googlemail.com">alexander.dick.dev@googlemail.com</a>
-                </p>
-            </div>
-            <div>
-                <h4 data-i18n="privacy_title">Hinweis zum Datenschutz</h4>
-                <p data-i18n="privacy_body">
-                    Diese Website setzt keine Cookies und verwendet keine Tracking- oder Analyse-Dienste.
-                    Beim Aufruf über GitHub Pages werden lediglich technisch notwendige Verbindungsdaten
-                    durch den Hosting-Anbieter (GitHub, Inc.) verarbeitet.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="i18n.js"></script>
-    <script src="app.js"></script>
+<header><div class="wrap">
+  <a class="brand" href="#start"><span class="mark" aria-hidden="true">AD</span> Alexander Dick</a>
+  <nav aria-label="Hauptnavigation" data-en-label="Main navigation">
+    <a href="#start" data-nav="start" data-en="Home">Start</a>
+    <a href="#leistungen" data-nav="leistungen" data-en="Services">Leistungen</a>
+    <a href="#profil" data-nav="profil" data-en="Profile &amp; Expertise">Profil &amp; Kompetenzen</a>
+    <a href="#kontakt" data-nav="kontakt" data-en="Contact">Kontakt</a>
+  </nav>
+  <div class="switch" role="group" aria-label="Sprache" data-en-label="Language">
+    <button lang="de" type="button" data-language="de" aria-pressed="true">DE</button>
+    <button lang="en" type="button" data-language="en" aria-pressed="false">EN</button>
+  </div>
+</div></header>
+<main>
+  <div data-page="start">
+    <section class="hero"><div class="wrap section hero-inner">
+      <div>
+        <p class="eyebrow" data-en="Software engineering · Augsburg / Remote">Softwareentwicklung · Augsburg / Remote</p>
+        <h1><strong data-en=".NET development">.NET-Entwicklung</strong> <span data-en="Modernisation and architecture">Modernisierung und Architektur</span></h1>
+        <p class="lead" data-en="Over 20 years of experience building maintainable .NET applications, business-critical backends and well-defined APIs. Custom development, modernisation and technical advice for companies and development teams.">Über 20 Jahre Erfahrung in der Entwicklung wartbarer .NET-Anwendungen, geschäftskritischer Backends und klar definierter APIs. Individuelle Entwicklung, Modernisierung und technische Beratung für Unternehmen und Entwicklungsteams.</p>
+        <div class="actions"><a class="button" href="#kontakt" data-en="Discuss a project">Projekt anfragen</a><a href="#leistungen" data-en="Explore services">Leistungen ansehen</a></div>
+      </div>
+      <figure class="identity">
+        <img src="portrait-blue-shirt-comic.webp" alt="Comic-Porträt in blauem Hemd" data-alt-de="Comic-Porträt in blauem Hemd" data-alt-en="Comic-style portrait wearing a blue shirt" width="720" height="720">
+        <figcaption><b>Alexander Dick</b><small>Principal Software Developer</small><small data-en="Graduate in computer science (Dipl.-Informatiker FH)">Dipl.-Informatiker (FH)</small></figcaption>
+      </figure>
+    </div></section>
+    <section class="band"><div class="wrap section">
+      <p class="eyebrow" data-en="01 // Services">01 // Leistungen</p>
+      <h2 data-en="What you can commission">Was Sie beauftragen können</h2>
+      <div class="overview">
+        <a class="service-card" href="#migration"><span class="num" data-en="01 / Existing systems">01 / Bestand</span><h3 data-en="Migration &amp; modernisation">Migration &amp; Modernisierung</h3><p data-en="Assess existing applications and modernise them step by step.">Bestehende Anwendungen analysieren und schrittweise modernisieren.</p><span class="service-link" data-en="View details">Details ansehen</span></a>
+        <a class="service-card" href="#entwicklung"><span class="num" data-en="02 / Development">02 / Entwicklung</span><h3 data-en="Custom .NET development">Individuelle .NET-Entwicklung</h3><p data-en="An internal application, an integration or a new feature with tests.">Eine interne Anwendung, eine Schnittstelle oder eine neue Funktion mit Tests.</p><span class="service-link" data-en="View details">Details ansehen</span></a>
+        <a class="service-card" href="#architektur"><span class="num" data-en="03 / Design">03 / Konzeption</span><h3 data-en="Architecture consulting">Architekturberatung</h3><p data-en="A documented recommendation with alternatives and trade-offs.">Eine dokumentierte Empfehlung mit Alternativen und Risiken.</p><span class="service-link" data-en="View details">Details ansehen</span></a>
+        <a class="service-card" href="#reviews"><span class="num" data-en="04 / Review">04 / Prüfung</span><h3 data-en="Code &amp; architecture reviews">Code- &amp; Architektur-Reviews</h3><p data-en="Prioritised findings and concrete next steps.">Priorisierte Befunde und konkrete nächste Schritte.</p><span class="service-link" data-en="View details">Details ansehen</span></a>
+      </div>
+    </div></section>
+    <section class="wrap section contact">
+      <div><h2 data-en="Planning a .NET project?">Ein .NET-Vorhaben geplant?</h2><p data-en="Clearly scoped assignments or individual work packages within a larger project.">Klar abgegrenzte Aufträge oder einzelne Arbeitspakete in einem größeren Projekt.</p></div>
+      <a class="button" href="#kontakt" data-en="Get in touch">Kontakt aufnehmen</a>
+    </section>
+  </div>
+  <div data-page="leistungen" hidden>
+    <section class="page-head"><div class="wrap section">
+      <p class="eyebrow" data-en="01 // Services">01 // Leistungen</p>
+      <h1 data-en=".NET development and consulting">.NET-Entwicklung und Beratung</h1>
+      <p class="lead" data-en="A standalone assignment or a defined work package within a larger project. Scope and deliverables are agreed before work begins.">Ein eigenständiger Auftrag oder ein abgegrenztes Arbeitspaket in einem größeren Vorhaben. Umfang und Ergebnis werden vor Beginn gemeinsam festgelegt.</p>
+    </div></section>
+    <div class="wrap">
+      <div class="service-grid">
+        <article class="service-card detail" id="migration"><p class="num" data-en="01 / Existing systems">01 / Bestand</p><h2 data-en="Migration &amp; modernisation">Migration &amp; Modernisierung</h2><p class="muted" data-en="Assessment and phased modernisation of Access/VBA, WinForms, WPF and older .NET applications. ASP.NET Core and Blazor are possible targets where the requirements justify them.">Analyse und schrittweise Modernisierung von Access/VBA-, WinForms- und WPF-Anwendungen sowie älteren .NET-Systemen. ASP.NET Core und Blazor sind mögliche Ziele, wenn sie zu den Anforderungen passen.</p><p class="result" data-en="Possible outcome: a migration plan or a modernised component.">Mögliches Ergebnis: ein Migrationsplan oder eine modernisierte Komponente.</p></article>
+        <article class="service-card detail" id="entwicklung"><p class="num" data-en="02 / Development">02 / Entwicklung</p><h2 data-en="Custom .NET development">Individuelle .NET-Entwicklung</h2><p class="muted" data-en="Development of custom applications, internal tools and REST or gRPC APIs. Existing systems can be extended with specifically scoped functionality.">Entwicklung kundenspezifischer Anwendungen, interner Werkzeuge sowie REST- oder gRPC-Schnittstellen. Bestehende Systeme können gezielt um neue Funktionen erweitert werden.</p><p class="result" data-en="Possible outcome: an integrated feature with tests.">Mögliches Ergebnis: eine integrierte Funktion mit passenden Tests.</p></article>
+        <article class="service-card detail" id="architektur"><p class="num" data-en="03 / Design">03 / Konzeption</p><h2 data-en="Architecture consulting">Architekturberatung</h2><p class="muted" data-en="Comparison of technical options based on project requirements, such as choosing a target architecture or defining boundaries within an existing system.">Vergleich technischer Optionen anhand der Projektanforderungen, etwa bei der Wahl einer Zielarchitektur oder bei der Aufteilung eines gewachsenen Systems.</p><p class="result" data-en="Possible outcome: a documented design or recommendation with alternatives and risks.">Mögliches Ergebnis: ein dokumentiertes Konzept oder eine Empfehlung mit Alternativen und Risiken.</p></article>
+        <article class="service-card detail" id="reviews"><p class="num" data-en="04 / Review">04 / Prüfung</p><h2 data-en="Code &amp; architecture reviews">Code- &amp; Architektur-Reviews</h2><p class="muted" data-en="Focused review of a change, module or architecture proposal for maintainability, testability and technical risks.">Gezielte Prüfung einer Änderung, eines Moduls oder eines Architekturkonzepts auf Wartbarkeit, Testbarkeit und technische Risiken.</p><p class="result" data-en="Possible outcome: prioritised findings and specific recommendations.">Mögliches Ergebnis: priorisierte Befunde und konkrete Empfehlungen.</p></article>
+      </div>
+      <div class="section"><a class="button" href="#kontakt" data-en="Discuss a project">Projekt anfragen</a></div>
+    </div>
+  </div>
+  <div data-page="profil" hidden>
+    <section class="page-head"><div class="wrap section split">
+      <div><p class="eyebrow" data-en="02 // Profile">02 // Profil</p><h1>Alexander Dick</h1><p class="muted">Principal Software Developer</p></div>
+      <div class="prose"><p class="lead" data-en="Computer science graduate (Dipl.-Informatiker FH), working in the .NET ecosystem since 2001. Experience spans custom business applications and the development and architecture of industrial software systems.">Diplom-Informatiker (FH), im .NET-Umfeld seit 2001. Berufspraxis in kundenspezifischen Geschäftsanwendungen sowie in der Entwicklung und Architektur industrieller Softwaresysteme.</p><p><a href="https://github.com/alex-dick-dev" data-en="GitHub profile ↗">GitHub-Profil ↗</a></p></div>
+    </div></section>
+    <section class="wrap section">
+      <h2 data-en="Expertise &amp; tools">Kompetenzen &amp; Werkzeuge</h2>
+      <dl class="stack">
+        <div><dt data-en=".NET &amp; backend · Regular use">.NET &amp; Backend · Regelmäßig im Einsatz</dt><dd data-en="C#, modern .NET including .NET 10 LTS, ASP.NET Core, gRPC / Protobuf, Windows services and PowerShell.">C#, modernes .NET einschließlich .NET 10 LTS, ASP.NET Core, gRPC / Protobuf, Windows-Dienste und PowerShell.</dd></div>
+        <div><dt data-en="Web &amp; desktop · Project experience">Web &amp; Desktop · Projekterfahrung</dt><dd>Blazor Server &amp; WebAssembly, REST, Razor Pages, WPF / XAML, WCF / SOAP.</dd></div>
+        <div><dt data-en="Legacy systems &amp; data access">Bestandssysteme &amp; Datenzugriff</dt><dd data-en=".NET Framework, WinForms, Access/VBA, VB.NET, classic ASP.NET, SQL Server / T-SQL, ADO.NET and Entity Framework / EF Core.">.NET Framework, WinForms, Access/VBA, VB.NET, klassisches ASP.NET, SQL Server / T-SQL, ADO.NET und Entity Framework / EF Core.</dd></div>
+        <div><dt data-en="Architecture, testing &amp; delivery">Architektur, Tests &amp; Auslieferung</dt><dd data-en="API design, refactoring, code reviews, unit, integration and end-to-end testing, MSTest, Playwright, Git, Azure DevOps and CI/CD.">API-Design, Refactoring, Code-Reviews, Unit-, Integrations- und End-to-End-Tests, MSTest, Playwright, Git, Azure DevOps und CI/CD.</dd></div>
+      </dl>
+      <aside class="ai"><h3 data-en="AI-assisted engineering">KI-gestützte Entwicklung</h3><p class="muted" data-en="GitHub Copilot, JetBrains Junie, multi-agent workflows, custom agent skills and MCP integrations support codebase analysis, implementation and test preparation where project rules allow.">GitHub Copilot, JetBrains Junie, Multi-Agent-Workflows, eigene Agent-Skills und MCP-Integrationen unterstützen bei der Analyse von Codebasen, der Umsetzung und der Vorbereitung von Tests. Der Einsatz richtet sich nach den Projektvorgaben.</p></aside>
+    </section>
+  </div>
+  <div data-page="kontakt" hidden>
+    <section class="page-head"><div class="wrap section">
+      <p class="eyebrow" data-en="03 // Contact">03 // Kontakt</p>
+      <h1 data-en="Discuss a project">Ihr Projekt besprechen</h1>
+      <p class="lead" data-en="A short overview of your application, desired outcome and timeframe is enough for an initial discussion. Based in Augsburg; remote across the DACH region.">Für eine erste Einschätzung genügen ein kurzer Überblick über Ihre Anwendung, das gewünschte Ergebnis und der Zeitrahmen. Standort Augsburg · Remote im DACH-Raum.</p>
+      <div class="actions"><a class="button" href="mailto:alexander.dick.dev@googlemail.com?subject=.NET" data-en="Send an email">Per E-Mail anfragen</a><a href="https://sites.google.com/view/alexander-dick-dev" data-en="Open the contact form ↗">Kontaktformular öffnen ↗</a></div>
+    </div></section>
+  </div>
+  <div data-page="impressum" hidden>
+    <section class="wrap section prose">
+      <h1 data-en="Legal notice">Impressum</h1>
+      <p>Alexander Dick – <span data-en="Software Development &amp; IT Consulting (Freelance)">Softwareentwicklung &amp; IT-Beratung (Freiberufliche Tätigkeit)</span></p>
+      <p>Philipp-Scheidemann-Straße 8<br>86199 Augsburg<br><span data-en="Germany">Deutschland</span></p>
+      <p><span data-en="Email">E-Mail</span>: <a href="mailto:alexander.dick.dev@googlemail.com">alexander.dick.dev@googlemail.com</a></p>
+    </section>
+  </div>
+  <div data-page="datenschutz" hidden>
+    <section class="wrap section prose">
+      <h1 data-en="Privacy notice">Datenschutz</h1>
+      <p data-en="This website does not use cookies, tracking or analytics services. When accessed through GitHub Pages, the hosting provider (GitHub, Inc.) processes technical connection data required to deliver the site.">Diese Website setzt keine Cookies und verwendet keine Tracking- oder Analyse-Dienste. Beim Aufruf über GitHub Pages werden technisch notwendige Verbindungsdaten durch den Hosting-Anbieter (GitHub, Inc.) verarbeitet.</p>
+    </section>
+  </div>
+</main>
+<footer><div class="wrap"><span>Alexander Dick · Augsburg</span><div class="legal"><a href="#impressum" data-en="Legal notice">Impressum</a><a href="#datenschutz" data-en="Privacy">Datenschutz</a></div></div></footer>
+<script>
+const text = Array.from(document.querySelectorAll('[data-en]'), node => [node,node.textContent]);
+const labels = Array.from(document.querySelectorAll('[data-en-label]'), node => [node,node.getAttribute('aria-label')]);
+const pages = Array.from(document.querySelectorAll('[data-page]'));
+const buttons = Array.from(document.querySelectorAll('[data-language]'));
+const details = new Set(['migration','entwicklung','architektur','reviews']);
+const descriptions = {
+  de: 'Diplom-Informatiker (FH), mehr als 20 Jahre .NET-Erfahrung: individuelle Entwicklung, Modernisierung, Architekturberatung und Reviews. Augsburg und remote.',
+  en: 'Computer science graduate with 20+ years of .NET experience: custom development, modernisation, architecture consulting and reviews. Augsburg and remote.'
+};
+function route(){
+  const hash = location.hash.slice(1);
+  const page = details.has(hash) ? 'leistungen' : pages.some(node=>node.dataset.page===hash) ? hash : 'start';
+  for(const node of pages) node.hidden = node.dataset.page !== page;
+  for(const node of document.querySelectorAll('[data-nav]')){
+    if(node.dataset.nav===page) node.setAttribute('aria-current','page');
+    else node.removeAttribute('aria-current');
+  }
+  if(details.has(hash)) document.getElementById(hash).scrollIntoView();
+  else window.scrollTo(0,0);
+}
+function setLanguage(lang){
+  document.documentElement.lang = lang;
+  document.title = lang==='en' ? 'Alexander Dick · .NET Development & Consulting' : 'Alexander Dick · .NET-Entwicklung & Beratung';
+  document.getElementById('metaDescription').content = descriptions[lang];
+  for(const [node,de] of text) node.textContent = lang==='en' ? node.dataset.en : de;
+  for(const [node,de] of labels) node.setAttribute('aria-label',lang==='en' ? node.dataset.enLabel : de);
+  document.querySelectorAll('[data-alt-en]').forEach(node => {
+    node.alt = lang==='en' ? node.dataset.altEn : node.dataset.altDe;
+  });
+  for(const button of buttons) button.setAttribute('aria-pressed',String(button.dataset.language===lang));
+}
+for(const button of buttons) button.addEventListener('click',()=>setLanguage(button.dataset.language));
+window.addEventListener('hashchange',route);
+route();
+</script>
 </body>
 </html>
